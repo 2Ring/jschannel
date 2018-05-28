@@ -323,7 +323,7 @@
                         delete inTbl[id];
 
                         // send error
-                        postMessage({ id: id, error: error, message: message });
+                        postMessage({ id: id, isError: true, error: error, message: message });
                     },
                     complete: function(v) {
                         completed = true;
@@ -453,7 +453,7 @@
                         debug("ignoring invalid response: " + m.id);
                     } else {
                         // XXX: what if client code raises an exception here?
-                        if (m.error) {
+                        if (m.isError) {
                             (1,outTbl[m.id].error)(m.error, m.message);
                         } else {
                             if (m.result !== undefined) (1,outTbl[m.id].success)(m.result);
