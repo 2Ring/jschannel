@@ -21,6 +21,7 @@
     "iframe"
   ],
   "author": "Lloyd Hilaiel",
+  "typings": "jschannel.d.ts",
   "license": "LGPL",
   "bugs": {
     "url": "https://github.com/alexkalderimis/jschannel/issues"
